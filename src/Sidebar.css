@@ -1,0 +1,156 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3fbff;
+}
+
+.hamburger-button {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 2rem;
+    color: #00acee;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*======= Modal =======*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+    width: 100%;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+}
+
+.show-modal {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+    transition: all ease-in-out 1s;
+}
+
+.modal-container {
+    background-color: white;
+    width: 500px;
+    height: 250px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.modal-close {
+    color: maroon;
+    background-color: transparent;
+    border: transparent;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+/*======= Sidebar =======*/
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: all ease-in-out 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+    .sidebar-container {
+        width: 400px;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.sidebar-close {
+    color: maroon;
+    background-color: transparent;
+    border: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.links-container {
+    flex: 1;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    color: rgb(75,75,75);
+    transition: all ease-in-out 0.3s;;
+}
+
+.link:hover {
+    background-color: #f3fbff;
+}
+
+.link svg {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: all ease-in-out 0.3s;
+}
+
+.link svg:hover {
+    color: rgb(51, 51, 51);
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.social {
+    font-size: 1.5rem;
+    color: #00acee;
+    transition: all ease-in-out 0.3s;
+}
+
+.social:hover {
+    color: #005f85;
+}
+
+.sidebar-show {
+    transform: translateX(0);
+}
+
